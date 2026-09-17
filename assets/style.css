@@ -569,7 +569,7 @@ section{ padding: 110px 0; }
 }
 .quote-block cite{ display:block; margin-top: 26px; font-style:normal; font-family:'Jost'; font-size:14px; letter-spacing:.06em; color:var(--olive); }
 
-/* ---------------- photographer + team ---------------- */
+/* ---------------- photographer + team (പഴയത് - ഇത് ഉപയോഗിക്കേണ്ടതില്ല) ---------------- */
 .photographer-section{ background:var(--dark-green); color:var(--ivory); }
 .photographer-grid{ display:grid; grid-template-columns:1fr 1fr; gap:24px; align-items:stretch; }
 .photographer-image{ min-height:480px; overflow:hidden; border:1px solid rgba(185,154,92,.35); border-radius:20px; }
@@ -651,6 +651,93 @@ section{ padding: 110px 0; }
 .cta-banner .actions{ display:flex; justify-content:center; gap:18px; flex-wrap:wrap; }
 
 /* ============================================================
+   FOUNDER SECTION (പുതിയ ഡിസൈൻ - ഇമേജിൽ കാണുന്നതുപോലെ)
+   ============================================================ */
+
+.founder-section {
+  padding: 110px 0;
+  background: var(--cream);
+  border-top: 1px solid var(--olive-line);
+}
+
+.founder-grid {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr; /* ഇമേജിനേക്കാൾ കൂടുതൽ സ്ഥലം ടെക്സ്റ്റിന് നൽകുന്നു */
+  gap: 70px;
+  align-items: center;
+}
+
+/* --- ഇടതുവശം: പ്രൊഫൈൽ --- */
+.founder-profile {
+  text-align: center;
+}
+
+.founder-image-wrap {
+  width: 300px;
+  height: 300px;
+  margin: 0 auto 30px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid var(--olive-line);
+  box-shadow: 0 10px 30px rgba(20, 32, 25, 0.08);
+}
+
+.founder-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s ease;
+}
+
+.founder-image-wrap:hover img {
+  transform: scale(1.05);
+}
+
+.founder-name {
+  font-family: 'Fraunces', serif;
+  font-size: 26px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: var(--ink);
+  margin: 0 0 10px 0;
+  text-transform: uppercase;
+}
+
+.founder-role {
+  font-family: 'Jost', sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.15em;
+  color: var(--olive);
+  font-weight: 500;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+/* --- വലതുവശം: ടെക്സ്റ്റ് --- */
+.founder-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.founder-quote {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 20px;
+  color: var(--forest);
+  line-height: 1.4;
+  margin-bottom: 10px;
+  padding-left: 16px;
+  border-left: 2px solid var(--gold);
+}
+
+.founder-copy p:not(.founder-quote) {
+  font-size: 16.5px;
+  color: var(--forest);
+  line-height: 1.7;
+}
+
+/* ============================================================
    RESPONSIVE FIXES (Mobile & Tablet)
    ============================================================ */
 
@@ -688,6 +775,29 @@ section{ padding: 110px 0; }
     object-fit: contain !important;
   }
   body:not(.non-responsive) .footer-grid{ grid-template-columns: 1fr; gap: 24px; }
+
+  /* FOUNDER SECTION TABLET FIX */
+  body:not(.non-responsive) .founder-grid {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+  body:not(.non-responsive) .founder-image-wrap {
+    width: 240px;
+    height: 240px;
+  }
+  body:not(.non-responsive) .founder-name {
+    font-size: 24px;
+  }
+  body:not(.non-responsive) .founder-copy {
+    text-align: center;
+  }
+  body:not(.non-responsive) .founder-quote {
+    border-left: none;
+    border-top: 1px solid var(--olive-line);
+    border-bottom: 1px solid var(--olive-line);
+    padding: 18px 0;
+    margin-bottom: 5px;
+  }
 }
 
 /* -------- Mobile (max-width: 760px) -------- */
@@ -794,6 +904,22 @@ section{ padding: 110px 0; }
   }
   body:not(.non-responsive) .site-header.nav-open .main-nav{ transform: translateY(0); display:flex; }
   body:not(.non-responsive) .site-header .main-nav a{ font-size: 22px; color: var(--ink) !important; }
+
+  /* FOUNDER SECTION MOBILE FIX */
+  body:not(.non-responsive) .founder-section {
+    padding: 64px 0;
+  }
+  body:not(.non-responsive) .founder-image-wrap {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 22px;
+  }
+  body:not(.non-responsive) .founder-name {
+    font-size: 22px;
+  }
+  body:not(.non-responsive) .founder-copy p:not(.founder-quote) {
+    font-size: 15.5px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce){
