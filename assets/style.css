@@ -662,12 +662,11 @@ section{ padding: 110px 0; }
 
 .founder-grid {
   display: grid;
-  grid-template-columns: 0.8fr 1.2fr; /* ഇമേജിനേക്കാൾ കൂടുതൽ സ്ഥലം ടെക്സ്റ്റിന് നൽകുന്നു */
+  grid-template-columns: 0.8fr 1.2fr; 
   gap: 70px;
   align-items: center;
 }
 
-/* --- ഇടതുവശം: പ്രൊഫൈൽ --- */
 .founder-profile {
   text-align: center;
 }
